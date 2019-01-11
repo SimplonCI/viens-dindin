@@ -5,8 +5,6 @@
 <!-- NProgress -->
 <link href="assets/plugins/nprogress/nprogress.css" rel="stylesheet">
 
-<!-- Custom Theme Style -->
-<link href="assets/css/custom.min.css" rel="stylesheet">
 
 
 
