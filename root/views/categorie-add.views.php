@@ -2,6 +2,7 @@
 
 
 <link href="assets/css/custom.min.css" rel="stylesheet">
+<link href="assets/css/error.css" rel="stylesheet">
 
 <div class="right_col" role="main">
           <div class="">
@@ -36,7 +37,7 @@
                   </div>
                   <div class="x_content">
                     <br />
-                    <form name="categorieFrom" onsubmit="formValidation()" id="demo-form2"   method='POST' data-parsley-validate class="form-horizontal form-label-left">
+                    <form name="categorieFrom" id="categorieFrom" action="categorie-add.php"  id="demo-form2"  accept="image/*"  enctype="multipart/form-data"   method='POST' data-parsley-validate class="form-horizontal form-label-left">
 
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="nom">
@@ -58,7 +59,7 @@
                       <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                           <button class="btn btn-primary" type="button">Retour à la liste</button>
-						  <button class="btn btn-warning" type="reset">Reset</button>
+                          <button class="btn btn-warning" type="reset">Reset</button>
                           <button type="submit" class="btn btn-danger" name="ajouter">Submit</button>
                         </div>
                       </div>
@@ -79,10 +80,11 @@
 
 
 
-
+  <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
+  <script src="assets/js/validation/categorie.js"></script>
   <!-- Custom Theme Scripts -->
   <script src="assets/js/custom.min.js"></script>
-  <script src="assets/js/validation/categorie.js"></script>
+  
 
   </body>
 </html>

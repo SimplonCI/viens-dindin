@@ -1,31 +1,44 @@
-function formValidation(){
-    var nom = document.forms['categorieForm']['nom'].value;
-    // var icone  = document.categorieFrom.icone
+$(function() {
+  // Initialize form validation on the registration form.
+  // It has the name attribute "registration"
+  $("form[name='categorieFrom']").validate({
+    // Specify validation rules
+    rules: {
+      // The key name on the left side is the name attribute
+      // of an input field. Validation rules are defined
+      // on the right side
+      nom: {
+        required: true,
+       
+      },
+      icone: {
+        required: false,
+      }
+    
+    },
+    // Specify validation error messages
+    messages: {
+      nom: "Le nom de la categorie est obligatoire",
+    },
+    // Make sure the form is submitted to the destination defined
+    // in the "action" attribute of the form when valid
+    // submitHandler: function(form) {
+    //   form.submit();
+    // }
+    submitHandler: submitForm()
+  });
 
-    if (nom == "")
-    {
-        alert("Please input a Value");
-        return false;
-    }
-    else 
-    {
-        alert('Code has accepted : you can try another');
-        return true; 
-    }
 
-}
-
-
-function allLetter(uname)
-{ 
-    var letters = /^[A-Za-z]+$/;
-    if(uname.value.match(letters))
-    {
-        return true;
-    }
-    else
-    {
-        alert('Username must have alphabet characters only');
-        return false;
-    }
-}
+  function submitForm() {
+    var data = $("#categorieFrom").serialize();
+    $.ajax({
+      type : 'POST',
+      url : 'categorie-add.php',
+      data : data,
+      // beforeSend: function() {
+      // $("#error").fadeOut();
+      // $("#btn-submit").html('<span class="glyphicon glyphicon-transfer"></span>   sending ...');
+      // }
+    })
+  }
+});
