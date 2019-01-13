@@ -1019,7 +1019,7 @@ if (typeof NProgress != 'undefined') {
 				  
 				if(typeof $.fn.tagsInput !== 'undefined'){	
 				 
-				$('#tags_1').tagsInput({
+				$('#acteurs_principals').tagsInput({
 				  width: 'auto'
 				});
 				

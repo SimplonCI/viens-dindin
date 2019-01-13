@@ -7,6 +7,7 @@
     $errors = array();
     $success = false;
     $exist = false;
+    $update = false;
     
     if(isset($_POST['ajouter'])){
         

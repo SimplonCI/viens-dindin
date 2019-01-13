@@ -30,10 +30,10 @@ $(function() {
 
 
   function submitForm() {
-    var data = $("#categorieFrom").serialize();
+    var data = $("#filmFrom").serialize();
     $.ajax({
       type : 'POST',
-      url : 'categorie-add.php',
+      url : 'film-add.php',
       data : data,
       // beforeSend: function() {
       // $("#error").fadeOut();

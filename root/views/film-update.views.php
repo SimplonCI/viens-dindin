@@ -86,7 +86,7 @@
                               Principaux acteurs <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                           <input type="text" id="acteurs_principals" name="acteurs_principals" require placeholder="acteur 1 , acteur 2" value="<?php echo $acteurs_principals?>" class="tags  form-control col-md-7 col-xs-12">
+                           <input type="text" id="acteurs_principals" name="acteurs_principals" require placeholder="acteur 1 , acteur 2" value="<?php echo $realisateur?>" class="tags  form-control col-md-7 col-xs-12">
                            <div id="suggestions-container" style="position: relative; float: left; width: 250px; margin: 10px;"></div>
                         </div>
                      </div>
@@ -97,16 +97,10 @@
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                            <select name="categorie_id" id="categorie_id" class="form-control col-md-7 col-xs-12" require>
-                              <option value="" disabled >Selectionner la catégorie du film</option>
+                              <option value="" disabled selected>Selectionner la catégorie du film</option>
                               <?php if($resultat_categorie):?>
                                  <?php while($rows = mysqli_fetch_assoc($resultat_categorie)):?>
-                                   
-                                    <?php if($rows['categorie_id'] == $categorie_id):?>
-                                       
-                                       <option value="<?php echo $rows['id']?>"  selected="selected" ><?php echo $rows['nom']?></option>
-                                    <?php else:?>
-                                       <option value="<?php echo $rows['id']?>"  ><?php echo $rows['nom']?></option>
-                                    <?php endif ?>
+                                    <option value="<?php echo $rows['id']?>"><?php echo $rows['nom']?></option>
                                  <?php endwhile?>
                               <?php endif?>
                            </select>
@@ -120,7 +114,8 @@
                               Le lien du film <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                           <textarea  id="lien_film" name="lien_film"  style="width:100%;" class="form-control" rows="4" cols="50" value="<?php echo $lien_film?>" ></textarea>
+                           <textarea  id="lien_film" name="lien_film"  value="<?php echo $lien_film?>" class="tags  form-control col-md-7 col-xs-12"></textarea>
+                           <div id="suggestions-container" style="position: relative; float: left; width: 250px; margin: 10px;"></div>
                         </div>
                      </div>
 
@@ -136,11 +131,10 @@
 
 
 
-
                      <?php if(isset($_POST['modifier']) || isset($_POST['supprimer'])):?>
                         <div>
-                           <input type="hidden" name="id" value='<?php echo $id?>'>
-                           <input type="hidden" name="cover_film" value='<?php echo $cover?>'>
+                           <input type="hidden" name="id" value=<?php echo $id?>>
+                           <input type="hidden" name="icone_cat" value=<?php echo $icone?>>
                         </div>
                      <?php endif ?>
 

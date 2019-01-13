@@ -35,7 +35,7 @@
                               <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
                                 <ul class="dropdown-menu" role="menu">
-                                  <li><a href="#">Ajouter une categorie</a>
+                                  <li><a href="#">Ajouter un film</a>
                                   </li>
                                   <li><a href="#">Statistiques</a>
                                   </li>
@@ -63,7 +63,13 @@
                                   <?php while($row = mysqli_fetch_assoc($resultat)):?>
                                     <tr>
                                       <td><?php echo $row['nom'];?></td>
-                                      <td>System Architect</td>
+                                      <td>
+                                        <form action="film-add.php" method="post">
+                                          <input type="hidden" name="id" value="<?php echo $row['id'];?>">
+                                          <button type="submit" class="btn btn-warning btn-xs" name="modifier">modifier</button>
+                                          <button type="submit" class="btn btn-danger btn-xs" name="supprimer">supprimer</button>
+                                        </form>
+                                      </td>
                                       
                                     </tr>
                                   <?php endwhile?>
