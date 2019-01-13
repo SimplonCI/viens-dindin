@@ -63,15 +63,7 @@
                                   <?php while($row = mysqli_fetch_assoc($resultat)):?>
                                     <tr>
                                       <td><?php echo $row['nom'];?></td>
-                                      <td>
-                                        <form action="categorie-add.php" method="post">
-                                          <input type="hidden" name="id" value="<?php echo $row['id'];?>">
-                                          <button type="submit" class="btn btn-warning btn-xs" name="modifier">modifier</button>
-                                          <button type="submit" class="btn btn-danger btn-xs" name="supprimer">supprimer</button>
-                                        </form>
-
-                                       
-                                      </td>
+                                      <td>System Architect</td>
                                       
                                     </tr>
                                   <?php endwhile?>
@@ -112,6 +104,6 @@
 
   <!-- Custom Theme Scripts -->
   <script src="assets/js/custom.min.js"></script>
-  
+
   </body>
 </html>

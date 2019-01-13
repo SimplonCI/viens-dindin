@@ -10,4 +10,4 @@
 ?>
 
 
-<?php include 'views/categorie-list.views.php';?>
+<?php include 'views/film-list.views.php';?>

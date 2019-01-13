@@ -2,7 +2,7 @@
     // database params 
     $server_name = 'localhost';
     $db_user = 'root';
-    $db_password = '';
+    $db_password = 'python92';
     $db_name = 'viens-dindin';
     $datepost = date('Y-m-d');
 

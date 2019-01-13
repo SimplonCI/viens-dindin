@@ -46,6 +46,19 @@
                       <li><a href="categorie.php">Afficher</a></li>
                     </ul>
                   </li>
+
+                  <li>
+                    <a>
+                      <i class="fa fa-edit"></i> Films 
+                      <span class="fa fa-chevron-down"></span>
+                    </a>
+                    <ul class="nav child_menu">
+                      <li><a href="film-add.php">Ajouter </a></li>
+                      <li><a href="film.php">Afficher</a></li>
+                    </ul>
+                  </li>
+
+
                   <li><a><i class="fa fa-desktop"></i> UI Elements <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="#">General Elements</a></li>
