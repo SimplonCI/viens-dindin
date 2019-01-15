@@ -78,6 +78,8 @@
             }
         }
 
+        
+        
         if(count($errors) == 0){
             // insetion dans la base de donnee
             
@@ -86,20 +88,10 @@
 
             // execution de la requete
             mysqli_query($db,$query);
-
+            
            $success = true;
 
-            $nom = '';
-            $cover = '';
-            $date_sortie = '';
-            $duree = '';
-            $realisateur = '';
-            $acteurs_principals = '';
-            $categorie_id = '';
-            $lien_film = '';
-            $cover = '';
-            $date_creation ='';
-            $root_id = '';
+           
 
            
         }
