@@ -1,0 +1,553 @@
+/**
+ * Copyright 2015 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+ body {
+  margin: 0;
+}
+
+/* Disable ugly boxes around images in IE10 */
+a img{
+  border: 0px;
+}
+
+::-moz-selection {
+  background-color: #6ab344;
+  color: #fff;
+}
+
+::selection {
+  background-color: #6ab344;
+  color: #fff;
+}
+
+.dindin-search-box .mdl-textfield__input {
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.dindin-header .mdl-menu__container {
+  z-index: 50;
+  margin: 0 !important;
+}
+
+
+.mdl-textfield--expandable {
+  width: auto;
+}
+
+.dindin-fab {
+  position: absolute;
+  right: 20%;
+  bottom: -26px;
+  z-index: 3;
+  background: #64ffda !important;
+  color: black !important;
+}
+
+.dindin-mobile-title {
+  display: none !important;
+}
+
+
+.dindin-logo-image {
+  height: 28px;
+  width: 140px;
+}
+
+
+.dindin-header {
+  overflow: visible;
+  background-color: white;
+}
+
+  .dindin-header .material-icons {
+    color: #767777 !important;
+  }
+
+  .dindin-header .mdl-layout__drawer-button {
+    background: transparent;
+    color: #767777;
+  }
+
+  .dindin-header .mdl-navigation__link {
+    color: #757575;
+    font-weight: 700;
+    font-size: 14px;
+  }
+
+  .dindin-navigation-container {
+    /* Simple hack to make the overflow happen to the left instead... */
+    direction: rtl;
+    -webkit-box-ordinal-group: 2;
+    -webkit-order: 1;
+        -ms-flex-order: 1;
+            order: 1;
+    width: 500px;
+    -webkit-transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+        width 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+        width 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dindin-navigation {
+    /* ... and now make sure the content is actually LTR */
+    direction: ltr;
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    width: 800px;
+  }
+
+  .dindin-search-box.is-focused + .dindin-navigation-container {
+    opacity: 0;
+    width: 100px;
+  }
+
+
+  .dindin-navigation .mdl-navigation__link {
+    display: inline-block;
+    height: 60px;
+    line-height: 68px;
+    background-color: transparent !important;
+    border-bottom: 4px solid transparent;
+  }
+
+    .dindin-navigation .mdl-navigation__link:hover {
+      border-bottom: 4px solid #8bc34a;
+    }
+
+  .dindin-search-box {
+    -webkit-box-ordinal-group: 3;
+    -webkit-order: 2;
+        -ms-flex-order: 2;
+            order: 2;
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+
+  .dindin-more-button {
+    -webkit-box-ordinal-group: 4;
+    -webkit-order: 3;
+        -ms-flex-order: 3;
+            order: 3;
+  }
+
+
+.dindin-drawer {
+  border-right: none;
+}
+
+  .dindin-drawer-separator {
+    height: 1px;
+    background-color: #dcdcdc;
+    margin: 8px 0;
+  }
+
+  .dindin-drawer .mdl-navigation__link.mdl-navigation__link {
+    font-size: 14px;
+    color: #757575;
+  }
+
+  .dindin-drawer span.mdl-navigation__link.mdl-navigation__link {
+    color: #8bc34a;
+  }
+
+  .dindin-drawer .mdl-layout-title {
+    position: relative;
+    background: #6ab344;
+    height: 160px;
+  }
+
+    .dindin-drawer .dindin-logo-image {
+      position: absolute;
+      bottom: 16px;
+    }
+
+.dindin-be-together-section {
+  position: relative;
+  height: 800px;
+  width: auto;
+  background-color: #f3f3f3;
+  background: url('images/slide01.jpg') center 30% no-repeat;
+  background-size: cover;
+}
+
+.logo-font {
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  line-height: 1;
+  color: #767777;
+  font-weight: 500;
+}
+
+.dindin-slogan {
+  font-size: 60px;
+  padding-top: 160px;
+}
+
+.dindin-sub-slogan {
+  font-size: 21px;
+  padding-top: 24px;
+}
+
+.dindin-create-character {
+  font-size: 21px;
+  padding-top: 400px;
+}
+
+  .dindin-create-character a {
+    text-decoration: none;
+    color: #767777;
+    font-weight: 300;
+  }
+
+.dindin-screen-section {
+  position: relative;
+  padding-top: 60px;
+  padding-bottom: 80px;
+}
+
+.dindin-screens {
+  text-align: right;
+  width: 100%;
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+.dindin-screen {
+  text-align: center;
+}
+
+.dindin-screen .dindin-link {
+  margin-top: 16px;
+  display: block;
+  z-index: 2;
+}
+
+.dindin-image-link {
+  text-decoration: none;
+}
+
+.dindin-wear {
+  display: inline-block;
+  width: 160px;
+  margin-right: 32px;
+}
+
+  .dindin-wear .dindin-screen-image {
+    width: 40%;
+    z-index: 1;
+  }
+
+
+.dindin-phone {
+  display: inline-block;
+  width: 64px;
+  margin-right: 48px;
+}
+
+  .dindin-phone .dindin-screen-image {
+    width: 100%;
+    z-index: 1;
+  }
+
+
+.dindin-tablet {
+  display: inline-block;
+  width: 110px;
+  margin-right: 64px;
+}
+
+  .dindin-tablet .dindin-screen-image {
+    width: 100%;
+    z-index: 1;
+  }
+
+  .dindin-tablet .dindin-link {
+    display: block;
+    z-index: 2;
+  }
+
+
+.dindin-tv {
+  display: inline-block;
+  width: 300px;
+  margin-right: 80px;
+}
+
+  .dindin-tv .dindin-screen-image {
+    width: 100%;
+    z-index: 1;
+  }
+
+
+.dindin-auto {
+  display: inline-block;
+  width: 300px;
+  overflow: hidden;
+}
+
+  .dindin-auto .dindin-screen-image {
+    display: block;
+    height: 300px;
+    z-index: 1;
+  }
+
+
+.dindin-wear-section {
+  position: relative;
+  background: url('images/wear.png') center top no-repeat;
+  background-size: cover;
+  height: 800px;
+}
+
+.dindin-wear-band {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background-color: #37474f;
+}
+
+.dindin-wear-band-text {
+  max-width: 800px;
+  margin-left: 25%;
+  padding: 24px;
+  text-align: left;
+  color: white;
+}
+
+  .dindin-wear-band-text p {
+    padding-top: 8px;
+  }
+
+.dindin-link {
+  text-decoration: none;
+  color: #8bc34a !important;
+}
+
+  .dindin-link:hover {
+    color: #7cb342 !important;
+  }
+
+  .dindin-link .material-icons {
+    position: relative;
+    top: 6px;
+  }
+
+.dindin-alt-link {
+  text-decoration: none;
+  color: #64ffda !important;
+  font-size: 16px;
+}
+
+  .dindin-alt-link:hover {
+    color: #00bfa5 !important;
+  }
+
+  .dindin-alt-link .material-icons {
+    position: relative;
+    top: 6px;
+  }
+
+.dindin-customized-section {
+  text-align: center;
+}
+
+.dindin-customized-section-text {
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 80px 16px 0 16px;
+}
+
+  .dindin-customized-section-text p {
+    padding-top: 16px;
+  }
+
+.dindin-customized-section-image {
+  background: url('images/devices.jpg') center top no-repeat;
+  background-size: cover;
+  height: 400px;
+}
+
+.dindin-more-section {
+  padding: 10px 0;
+  max-width: 1044px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+  .dindin-more-section .dindin-section-title {
+    margin-left: 12px;
+    padding-bottom: 24px;
+  }
+
+.dindin-card-container {
+}
+.dindin-card-container .mdl-card{
+  height: 300px;
+}
+
+  .dindin-card-container .mdl-card__media {
+    overflow: hidden;
+    background: transparent;
+    
+  }
+
+    .dindin-card-container .mdl-card__media img {
+      width: 100%;
+    }
+
+  .dindin-card-container .mdl-card__title {
+    background: transparent;
+    height: auto;
+  }
+
+  .dindin-card-container .mdl-card__title-text {
+    color: black;
+    height: auto;
+  }
+
+  .dindin-card-container .mdl-card__supporting-text {
+    height: auto;
+    color: black;
+    padding-bottom: 48px;
+  }
+
+  .dindin-card-container .mdl-card__actions {
+    position: absolute;
+    bottom: 0;
+  }
+
+  .dindin-card-container .mdl-card__actions a {
+    border-top: none;
+    line-height: 32px;
+    font-size: 16px;
+  }
+
+.dindin-footer {
+  background-color: #fafafa;
+  position: relative;
+}
+
+  .dindin-footer a:hover {
+    color: #8bc34a;
+  }
+
+  .dindin-footer .mdl-mega-footer--top-section::after {
+    border-bottom: none;
+  }
+
+  .dindin-footer .mdl-mega-footer--middle-section::after {
+    border-bottom: none;
+  }
+
+  .dindin-footer .mdl-mega-footer--bottom-section {
+    position: relative;
+  }
+
+  .dindin-footer .mdl-mega-footer--bottom-section a {
+    margin-right: 2em;
+  }
+
+  .dindin-footer .mdl-mega-footer--right-section a .material-icons {
+    position: relative;
+    top: 6px;
+  }
+
+
+.dindin-link-menu:hover {
+  cursor: pointer;
+}
+
+
+/**** Mobile layout ****/
+@media (max-width: 900px) {
+  .dindin-navigation-container {
+    display: none;
+  }
+
+  .dindin-title {
+    display: none !important;
+  }
+
+  .dindin-mobile-title {
+    display: block !important;
+    position: absolute;
+    left: calc(50% - 70px);
+    top: 12px;
+    -webkit-transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* WebViews in iOS 9 break the "~" operator, and WebViews in OS X 10.10 break
+     consecutive "+" operators in some cases. Therefore, we need to use both
+     here to cover all the bases. */
+  .dindin.dindin-search-box.is-focused ~ .dindin-mobile-title,
+  .dindin-search-box.is-focused + .dindin-navigation-container + .dindin-mobile-title {
+    opacity: 0;
+  }
+
+  .dindin-more-button {
+    display: none;
+  }
+
+  .dindin-search-box.is-focused {
+    width: calc(100% - 48px);
+  }
+
+  .dindin-search-box .mdl-textfield__expandable-holder {
+    width: 100%;
+  }
+
+  .dindin-be-together-section {
+    height: 350px;
+  }
+
+  .dindin-slogan {
+    font-size: 26px;
+    margin: 0 16px;
+    padding-top: 24px;
+  }
+
+  .dindin-sub-slogan {
+    font-size: 16px;
+    margin: 0 16px;
+    padding-top: 8px;
+  }
+
+  .dindin-create-character {
+    padding-top: 200px;
+    font-size: 16px;
+  }
+
+  .dindin-create-character img {
+    height: 12px;
+  }
+
+  .dindin-fab {
+    display: none;
+  }
+
+  .dindin-wear-band-text {
+    margin-left: 0;
+    padding: 16px;
+  }
+
+  .dindin-footer .mdl-mega-footer--bottom-section {
+    display: none;
+  }
+}
