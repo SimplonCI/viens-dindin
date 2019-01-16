@@ -3,7 +3,7 @@
 
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
 
-    <?php include 'partials/_navbar.php';?>
+      <?php include 'partials/_navbar.php';?>
 
       <div class="dindin-content mdl-layout__content">
         <a name="top"></a>
@@ -60,5 +60,6 @@
             
           </div>
         </div>
+        
 
 <?php include 'partials/_footer.php';?>

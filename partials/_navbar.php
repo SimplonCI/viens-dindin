@@ -21,9 +21,9 @@
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Mes favoris</a>
               
               
-              <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+              <a href="login.php" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
                 identifiez-vous
-              </button>
+              </a>
             </nav>
           </div>
           <span class="dindin-mobile-title mdl-layout-title">
