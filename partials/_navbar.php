@@ -20,24 +20,37 @@
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Mes vidéos</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Mes favoris</a>
               
-              
-              <a href="login.php" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
-                identifiez-vous
-              </a>
+              <?php if(isset($_SESSION['connected'])):?>
+               
+                <?php if($_SESSION['premium'] == 1):?>
+                  
+                <?php else:?>
+                <a href="login.php" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style="background-color:#ff0000;">
+                    Passer au premium
+                  </a>
+                <?php endif ?>
+                
+              <?php else: ?>
+                <a href="login.php" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+                  identifiez-vous
+                </a>
+              <?php endif ?>
             </nav>
           </div>
           <span class="dindin-mobile-title mdl-layout-title">
             <img class="dindin-logo-image" src="assets/images/android-logo.png">
           </span>
-          <button class="dindin-more-button mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="more-button">
-            <i class="material-icons">more_vert</i>
-          </button>
-          <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="more-button">
-            <li class="mdl-menu__item">5.0 Lollipop</li>
-            <li class="mdl-menu__item">4.4 KitKat</li>
-            <li disabled class="mdl-menu__item">4.3 Jelly Bean</li>
-            <li class="mdl-menu__item">dindin History</li>
-          </ul>
+          <?php if(isset($_SESSION['connected'])):?>
+            <button class="dindin-more-button mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="more-button">
+              <i class="material-icons">more_vert</i>
+            </button>
+            <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="more-button">
+              <li class="mdl-menu__item">5.0 Lollipop</li>
+              <li class="mdl-menu__item">4.4 KitKat</li>
+              <li disabled class="mdl-menu__item">4.3 Jelly Bean</li>
+              <li class="mdl-menu__item">dindin History</li>
+            </ul>
+          <?php endif ?>
         </div>
       </div>
 
@@ -54,18 +67,18 @@
           <a class="mdl-navigation__link" href="">One</a>
           <a class="mdl-navigation__link" href="">Play</a>
           <div class="dindin-drawer-separator"></div>
-          <span class="mdl-navigation__link" href="">Versions</span>
+          <span class="mdl-navigation__link" href="">Profil</span>
           <a class="mdl-navigation__link" href="">Lollipop 5.0</a>
           <a class="mdl-navigation__link" href="">KitKat 4.4</a>
           <a class="mdl-navigation__link" href="">Jelly Bean 4.3</a>
           <a class="mdl-navigation__link" href="">dindin history</a>
           <div class="dindin-drawer-separator"></div>
-          <span class="mdl-navigation__link" href="">Resources</span>
+          <span class="mdl-navigation__link" href="">Abonement</span>
           <a class="mdl-navigation__link" href="">Official blog</a>
           <a class="mdl-navigation__link" href="">dindin on Google+</a>
           <a class="mdl-navigation__link" href="">dindin on Twitter</a>
           <div class="dindin-drawer-separator"></div>
-          <span class="mdl-navigation__link" href="">For developers</span>
+          <span class="mdl-navigation__link" href="">Aide</span>
           <a class="mdl-navigation__link" href="">App developer resources</a>
           <a class="mdl-navigation__link" href="">dindin Open Source Project</a>
           <a class="mdl-navigation__link" href="">dindin SDK</a>
