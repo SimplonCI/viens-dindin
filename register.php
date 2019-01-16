@@ -1,4 +1,10 @@
 <?php
+    
+     if(isset($_SESSION['connected'])){
+         echo '<script language="Javascript">';
+         echo 'document.location.replace("./index.php")'; // -->
+         echo ' </script>';
+     }
     // include database
     include 'config/database.php';
 
@@ -42,18 +48,19 @@
             array_push($errors,"Les mots de passe ne concordent pas");
         }
 
+        // die($email);
         // check pour voir si l'utilisateur existe deja
         $user_check_query = "SELECT * FROM users WHERE email='$email'";
         $user_resultat_query = mysqli_query($db,$user_check_query);
-        // $rows = mysqli_num_rows($user_resultat_query);
+        $rows = mysqli_num_rows($user_resultat_query);
         
         // die(var_dump($user_resultat_query));
-        if($user_resultat_query){
-            
+        if($rows != 0){
+            // die("ldjjeejd");
             array_push($errors,"Adresse email déjà utilisée");
         }
 
-
+        // die(count($errors));
         if(count($errors) === 0){
             
             $query = "INSERT INTO users (fullname,email,telephone,password,date_creation)

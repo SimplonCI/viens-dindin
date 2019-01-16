@@ -28,6 +28,7 @@
 
                     <div class="signin-form">
                         <h2 class="form-title">Bon retour parmi nous !</h2>
+                        <?php include 'partials/_error.php'?>
                         <form method="POST" class="register-form"  name="login-form" id="login-form" action="login.php">
                             <div class="form-group">
                                 <label for="username"><i class="zmdi zmdi-account material-icons-name"></i></label>

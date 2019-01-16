@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 <body class="nav-md">
     <div class="container body">
       <div class="main_container">
@@ -44,7 +45,7 @@
                 <ul class="nav side-menu">
                 <li>
                     <a>
-                      <i class="fa fa-edit"></i> Catégorie 
+                      <i class="fas fa-clone"></i> Catégorie 
                       <span class="fa fa-chevron-down"></span>
                     </a>
                     <ul class="nav child_menu">
@@ -55,7 +56,7 @@
 
                   <li>
                     <a>
-                      <i class="fa fa-edit"></i> Films 
+                      <i class="fas fa-film"></i> Films 
                       <span class="fa fa-chevron-down"></span>
                     </a>
                     <ul class="nav child_menu">
@@ -66,7 +67,7 @@
 
                   <li>
                     <a>
-                      <i class="fa fa-edit"></i> Serie 
+                      <i class="fas fa-images"></i> Serie 
                       <span class="fa fa-chevron-down"></span>
                     </a>
                     <ul class="nav child_menu">
@@ -76,27 +77,32 @@
                   </li>
                 </ul>
               </div>
-
-              <div class="menu_section">
-                <h3>Utilisateurs</h3>
-                <ul class="nav side-menu">
-                  <li><a><i class="fa fa-bug"></i> Administrateurs <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="admin-list.php">Lister</a></li>
-                      <li><a href="admin-add.php">Ajouter</a></li>
+              <?php if(isset($_SESSION['connecte'])):?>
+               
+                <?php if($_SESSION['role'] === '1'):?>
+                 
+                  <div class="menu_section">
+                    <h3>Utilisateurs</h3>
+                    <ul class="nav side-menu">
+                      <li><a><i class="fa fa-bug"></i> Administrateurs <span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                          <li><a href="admin-list.php">Lister</a></li>
+                          <li><a href="admin-add.php">Ajouter</a></li>
+                          
+                        </ul>
+                      </li>
+                      <li><a><i class="fa fa-users"></i> Abonnées <span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                          <li><a href="abonnes.php">Lister</a></li>
+                          <!-- <li><a href="#">Ajouter</a></li> -->
+                          
+                        </ul>
+                      </li>
                       
                     </ul>
-                  </li>
-                  <li><a><i class="fa fa-users"></i> Abonnées <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="#">Lister</a></li>
-                      <li><a href="#">Ajouter</a></li>
-                      
-                    </ul>
-                  </li>
-                  
-                </ul>
-              </div>
+                  </div>
+                <?php endif ?>
+              <?php endif ?>
 
               <div class="menu_section">
                 <h3>Paramètres</h3>
@@ -104,12 +110,12 @@
                   
                   <li><a><i class="fa fa-windows"></i> Extras <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="#">403 Error</a></li>
-                      <li><a href="#">404 Error</a></li>
+                      <li><a href="#">Mon profil</a></li>
+                      <!-- <li><a href="#">404 Error</a></li>
                       <li><a href="#">500 Error</a></li>
                       <li><a href="#">Plain Page</a></li>
                       <li><a href="#">Login Page</a></li>
-                      <li><a href="#">Pricing Tables</a></li>
+                      <li><a href="#">Pricing Tables</a></li> -->
                     </ul>
                   </li>
                                   

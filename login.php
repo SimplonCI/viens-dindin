@@ -1,5 +1,11 @@
 
 <?php 
+    session_start();
+    if(isset($_SESSION['connected'])){
+        echo '<script language="Javascript">';
+        echo 'document.location.replace("./index.php")'; // -->
+        echo ' </script>';
+    }
     include 'config/database.php';
 
     // declaration des variables
@@ -18,7 +24,7 @@
         $rows = mysqli_num_rows($result_check_query);
 
         // die(var_dump($rows));
-        if($result_check_query ){
+        if($rows != 0){
             // die("start");
             while($user = mysqli_fetch_assoc($result_check_query)){
                
@@ -30,6 +36,7 @@
                      $_SESSION['premium'] = $user['premium_user'];
                      $_SESSION['photo_profil'] = $user['photo_profil'];
                      $_SESSION['connected'] = true;
+                     $_SESSION['id'] = $user['id'];
 
                     echo '<script language="Javascript">';
                     echo 'document.location.replace("./index.php")'; // -->
@@ -37,10 +44,18 @@
                
             } 
         }else{
-            array_push($errors,"Adresse email ou mot de passe incorrecte");
+            array_push($errors,"Adresse email ou mot de passe incorrect");
         }
     }
 
+
+    if(isset($_GET['logout'])){
+        
+        session_destroy();
+        echo '<script language="Javascript">';
+        echo 'document.location.replace("./index.php")'; // -->
+        echo ' </script>';
+    }
     
 ?>
 <?php include 'views/login.views.php'?>

@@ -1,7 +1,7 @@
 <div class="dindin-header mdl-layout__header mdl-layout__header--waterfall">
         <div class="mdl-layout__header-row">
           <span class="dindin-title mdl-layout-title">
-            <img class="dindin-logo-image" src="assets/images/android-logo.png">
+            <img class="dindin-logo-image" src="assets/images/dindin-logo.svg">
           </span>
           <!-- Add spacer, to align navigation to the right in desktop -->
           <div class="dindin-header-spacer mdl-layout-spacer"></div>
@@ -16,9 +16,9 @@
           <!-- Navigation -->
           <div class="dindin-navigation-container">
             <nav class="dindin-navigation mdl-navigation">
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Tout le catalogue</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Mes vidéos</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Mes favoris</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="/">Tout le catalogue</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="playlist.php">Mes vidéos</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="favoris.php">Mes favoris</a>
               
               <?php if(isset($_SESSION['connected'])):?>
                
@@ -38,49 +38,49 @@
             </nav>
           </div>
           <span class="dindin-mobile-title mdl-layout-title">
-            <img class="dindin-logo-image" src="assets/images/android-logo.png">
+            <img class="dindin-logo-image" src="assets/images/dindin-logo.svg">
           </span>
           <?php if(isset($_SESSION['connected'])):?>
             <button class="dindin-more-button mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="more-button">
               <i class="material-icons">more_vert</i>
             </button>
             <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="more-button">
-              <li class="mdl-menu__item">5.0 Lollipop</li>
-              <li class="mdl-menu__item">4.4 KitKat</li>
-              <li disabled class="mdl-menu__item">4.3 Jelly Bean</li>
-              <li class="mdl-menu__item">dindin History</li>
+              <li class="mdl-menu__item">
+              <a class="mdl-navigation__link" href="#" style="">Profil</a>
+              </li>
+              <li class="mdl-menu__item">
+                <a class="mdl-navigation__link" href="#" style="">Abonement</a>
+              </li>
+              <li  class="mdl-menu__item">
+                <a class="mdl-navigation__link" href="login.php?logout=1" style="">déconnexion</a>
+              </li>
+              
             </ul>
           <?php endif ?>
         </div>
       </div>
 
       <div class="dindin-drawer mdl-layout__drawer">
-        <span class="mdl-layout-title">
-          <img class="dindin-logo-image" src="assets/images/android-logo-white.png">
-        </span>
+       
         <nav class="mdl-navigation">
-          <a class="mdl-navigation__link" href="">Phones</a>
-          <a class="mdl-navigation__link" href="">Tablets</a>
-          <a class="mdl-navigation__link" href="">Wear</a>
-          <a class="mdl-navigation__link" href="">TV</a>
-          <a class="mdl-navigation__link" href="">Auto</a>
-          <a class="mdl-navigation__link" href="">One</a>
-          <a class="mdl-navigation__link" href="">Play</a>
-          <div class="dindin-drawer-separator"></div>
-          <span class="mdl-navigation__link" href="">Profil</span>
-          <a class="mdl-navigation__link" href="">Lollipop 5.0</a>
-          <a class="mdl-navigation__link" href="">KitKat 4.4</a>
-          <a class="mdl-navigation__link" href="">Jelly Bean 4.3</a>
-          <a class="mdl-navigation__link" href="">dindin history</a>
-          <div class="dindin-drawer-separator"></div>
-          <span class="mdl-navigation__link" href="">Abonement</span>
-          <a class="mdl-navigation__link" href="">Official blog</a>
-          <a class="mdl-navigation__link" href="">dindin on Google+</a>
-          <a class="mdl-navigation__link" href="">dindin on Twitter</a>
+          <a class="mdl-navigation__link" href="/">Acceuil</a>
+          <a class="mdl-navigation__link" href="abonement.php">Mes abonnements</a>
+          <a class="mdl-navigation__link" href="playlist.php">Mes videos</a>
+          <a class="mdl-navigation__link" href="favoris.php">Mes favoris</a>
+          <?php if(isset($_SESSION['connected'])):?>
+            <div class="dindin-drawer-separator"></div>
+            <span class="mdl-navigation__link" href="">Abonement</span>
+            <a class="mdl-navigation__link" href="abonement.php">Historique</a>
+            <a class="mdl-navigation__link" href="">Durée</a>
+            <div class="dindin-drawer-separator"></div>
+            <span class="mdl-navigation__link" href="">Profil</span>
+            <a class="mdl-navigation__link" href="">Mettre a jour</a>
+            
+            <a class="mdl-navigation__link" href="login.php?logout=1">déconnexion</a>
+          <?php endif ?>
           <div class="dindin-drawer-separator"></div>
           <span class="mdl-navigation__link" href="">Aide</span>
-          <a class="mdl-navigation__link" href="">App developer resources</a>
-          <a class="mdl-navigation__link" href="">dindin Open Source Project</a>
-          <a class="mdl-navigation__link" href="">dindin SDK</a>
+          <a class="mdl-navigation__link" href="">contact</a>
+         
         </nav>
       </div>

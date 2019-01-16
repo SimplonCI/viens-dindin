@@ -4,7 +4,7 @@
 
     
      // requete
-     $query_film = "SELECT * FROM film";
+     $query_film = "SELECT * FROM film ORDER BY id DESC; ";
      // execution de la 
      $resultat_film = mysqli_query($db,$query_film);
 

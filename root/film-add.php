@@ -11,7 +11,10 @@
     $categorie_id = '';
     $lien_film = '';
     $date_creation = $datepost;
-    $root_id = 1;
+    if(isset($_SESSION['id'])){
+        $root_id = $_SESSION['id'];
+    }
+    
 
     $errors = array();
     $success = false;
@@ -29,6 +32,7 @@
         $realisateur = strtolower(addslashes($_POST['realisateur']));
         $acteurs_principals = strtolower(addslashes($_POST['acteurs_principals']));
         $categorie_id = strtolower(addslashes($_POST['categorie_id']));
+        $abonement = strtolower(addslashes($_POST['abonement']));
         $lien_film = $_POST['lien_film'];
 
         // die($date_creation);
@@ -51,6 +55,11 @@
         if(empty($categorie_id)){
             array_push($errors, "La catégorie du film est obligatoire");
         }
+
+        if(empty($categorie_id)){
+            array_push($errors, "L'abonement' du film est obligatoire");
+        }
+
         if(empty($lien_film)){
             array_push($errors, "Le lien du film est obligatoire");
         }
@@ -78,13 +87,24 @@
             }
         }
 
+        if($abonement == 'classic'){
+            $classic = 1;
+        } else{
+            $classic = 0;
+        }
+
+        if($abonement == 'premium'){
+            $premium = 1;
+        }else{
+            $premium = 0;
+        }
         
         
         if(count($errors) == 0){
             // insetion dans la base de donnee
             
-            $query = "INSERT INTO film (nom,date_de_sortie,duree,realisateur,acteurs_principals,categorie_id,lien_film,cover_film,root_id,date_creation)
-                    VALUES('$nom','$date_sortie','$duree','$realisateur','$acteurs_principals','$categorie_id','$lien_film','$cover','1','$date_creation')";
+            $query = "INSERT INTO film (nom,date_de_sortie,duree,realisateur,acteurs_principals,categorie_id,lien_film,cover_film,root_id,date_creation,premium,classic)
+                    VALUES('$nom','$date_sortie','$duree','$realisateur','$acteurs_principals','$categorie_id','$lien_film','$cover','1','$date_creation','$premium','$classic')";
 
             // execution de la requete
             mysqli_query($db,$query);
@@ -141,7 +161,19 @@
         $categorie_id = strtolower(addslashes($_POST['categorie_id']));
         $lien_film = $_POST['lien_film'];
         $cover =  $_POST['cover_film'];
-       
+        $abonement = strtolower(addslashes($_POST['abonement']));
+
+        if($abonement == 'classic'){
+            $classic = 1;
+        } else{
+            $classic = 0;
+        }
+
+        if($abonement == 'premium'){
+            $premium = 1;
+        }else{
+            $premium = 0;
+        }
         // die($icone_cate);
         // voir si l'image a mis a jour 
         if(isset($_FILES['cover'])){
@@ -200,7 +232,7 @@
 <?php if($success): ?>
     <script type="text/javascript">
         $(document).ready(function(){
-        swal("<?php echo 'la catégorie '.$nom ?>", "ajouté avec succès","success");
+        swal("<?php echo 'le film '.$nom ?>", "ajouté avec succès","success");
             console.log('hello');
         });
     </script>
@@ -208,7 +240,7 @@
 <?php if($update): ?>
     <script type="text/javascript">
         $(document).ready(function(){
-        swal("<?php echo 'la catégorie '.$nom ?>", "été mise a  jour","success");
+        swal("<?php echo 'le film '.$nom ?>", "été mise a  jour","success");
             console.log('hello');
         });
     </script>
@@ -217,7 +249,7 @@
 <?php if($exist): ?>
     <script type="text/javascript">
         $(document).ready(function(){
-        swal("<?php echo 'la catégorie '. $nom ?>", "existe déjà","error");
+        swal("<?php echo 'le film '. $nom ?>", "existe déjà","error");
             console.log('hello');
         })
     </script>

@@ -23,6 +23,7 @@
                 <div class="signup-content">
                     <div class="signup-form">
                         <h2 class="form-title">Créer un compte</h2>
+                        <?php include 'partials/_error.php'?>
                         <form method="POST" class="register-form" id="register-form" name="register-form">
                             <div class="form-group">
                                 <label for="nom"><i class="zmdi zmdi-account material-icons-name"></i></label>

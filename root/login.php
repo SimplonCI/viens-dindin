@@ -22,9 +22,11 @@
             while($admin = mysqli_fetch_assoc($result_check_query)){
                 if ($admin['email'] == $username && $password == $admin['password']) {
                      session_start();
+                     $_SESSION['id'] =  $admin['id'];
                      $_SESSION['email'] = $admin['email'];
                      $_SESSION['nom'] = $admin['nom'];
                      $_SESSION['prenom'] = $admin['prenom'];
+                     $_SESSION['role'] = $admin['role'];
                      $_SESSION['photo_profil'] = $admin['photo_profil'];
                      $_SESSION['connecte'] = true;
 

@@ -10,6 +10,9 @@ $(function() {
         nom: {
           required: true,
         },
+        abonement: {
+          required: true,
+        },
         cover: {
           required: true,
         },
@@ -36,6 +39,7 @@ $(function() {
       // Specify validation error messages
       messages: {
         nom: "Le nom du film est obligatoire",
+        abonement: "L'abonement du film est obligatoire",
         lien_film: "Le lien  du film est obligatoire",
         categorie_id: "La categorie du film est obligatoire",
         acteurs_principalsm: "Le nom des principaux acteurs du film est obligatoire",
