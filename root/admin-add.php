@@ -181,7 +181,7 @@
 
     if(isset($_POST['delete'])){
        $id = $_POST['id'];
-       $delete_query = "DELETE FROM categorie WHERE id='$id'";
+       $delete_query = "DELETE FROM root WHERE id='$id'";
        $db->query($delete_query);
 
        echo '<script language="Javascript">';
